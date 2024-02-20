@@ -1,0 +1,58 @@
+
+Terraform Architecture: Terraform architecture constitutes of two main components. 1) Core & 2) Providers.
+
+Terraform Core: 
+Core: Terraform’s core is a statically-compiled binary written in golang. Core takes input in the form of terraform configuration from the user and information from state. Using the configuration file and the state information, core creates a plan to bring the system to the desired state.
+Terraform configuration: The Terraform configuration is written by the user to define what needs to be done. It declares resources, which represent the infrastructure objects.
+Terraform State: State is a file that up-to-date information about the current setup of the infrastructure. Before any new operation, terraform updates the state with the real infrastructure.
+
+Terraform Providers: 
+The second main component of Terraform is the Provider Plugin. The configuration defines which provider(s) to use for a particular setup. Providers add resources which can be managed using terraform. Most of the major providers can be found on the terraform registry. 
+
+Terraform configuration:
+▪ Terraform configuration is the primary way of provisioning infrastructure using Terraform
+▪ The configuration is written in the terraform language.
+▪ Terraform language is declarative in nature.
+▪ The configuration tells terraform how to manage and provision the infrastructure.
+
+Terraform configuration Syntax elements: 
+Resource: Resource blocks are used to define infrastructure objects. Resource behavior defines how terraform handles resource declarations. Meta-arguments provides special arguments that can be used with each resource type.
+Blocks: Blocks acts as containers for configuration of objects such as resources. It can have a block type, 0 or more labels and any number of arguments.
+Arguments: Arguments are inputs given to a name. They are used in blocks to.
+Expressions: These represent values. They can be direct values, referenced, or a set of values.
+
+Example:
+resource “aws_vpc” “main”{
+cidr_block = var.base_cidr_block
+}
+<BLOCK TYPE> “<BLOCK LABEL>” “<BLOCK LABEL>”{
+# Block body
+<IDENTIFIER> = <EXPRESSION> # Argument
+}
+
+Terraform Commands:
+Init:
+The init command is used to prepare the working directory for follow up commands.
+This is the first command that is run after writing a new configuration.
+The working directory must contain a configuration to run this command.
+
+Plan:
+▪ It displays the changes that will be made by the configuration.
+▪ It creates an execution plan by refreshing the state and comparing it with the required configuration.
+▪ It is equivalent to the dry run feature available in some of build softwares.
+
+Apply:
+▪ Apply as the name suggests applies the newly created configuration.
+▪ It can also be used to deploy the predetermined set of actions generated in the execution plan.
+
+Modifying Resources: 
+▪ Modifying an existing resource can be done by simply making the changes to the existing terraform configuration and executing the apply command.
+▪ The changes can also be seen marked with a yellow tilde ‘~’ sign in execution plan.
+
+Deleting Resources:
+▪ Deleting resources can be done by using the destroy command.
+▪ Simply running the destroy command terminates all the resources created by terraform.
+▪ In-order to delete a specific resource, parameters can be passed.
+
+Referencing Resources: Terraform gives you the option to replicate infrastructure by referencing existing resources.
+
