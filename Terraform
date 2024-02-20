@@ -1,3 +1,14 @@
+Provisioning:
+Provisioning involves providing the IT infrastructure to host services for your organization’s business, users, employees and customers.
+
+Terraform: Terraform is an Infrastructure as Code Software used for provisioning infrastructure safely and efficiently.
+
+Terraform Features:
+IaC: Infrastructure as Code allows for users to describe their desired infrastructure as a high-level configuration syntax.
+Execution Plans: Execution plans allows you to preview the changes your configuration will make.
+Resource Graph: Terraform creates graphs to ensure that all the non-dependent resources are created parallelly.
+Change Automation: With the help of execution plans and resource graphs users know exactly what will change avoiding many human errors.
+
 
 Terraform Architecture: Terraform architecture constitutes of two main components. 1) Core & 2) Providers.
 
