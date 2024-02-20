@@ -67,3 +67,35 @@ Deleting Resources:
 
 Referencing Resources: Terraform gives you the option to replicate infrastructure by referencing existing resources.
 
+
+Terraform State Command:
+
+The terraform state command provides you with advanced state management capabilities. The state command can be used to manipulate terraform state instead of changing it directly.
+
+Subcommand Description
+ list: Lists all the resources in the current state
+ show: Displays details about a deployed resource
+ rm: Removes a deployed resource
+ mv: It is used to move objects to a given destination
+ pull: Displays the current state on stdout
+ push: Updates the state from the local state file
+ replace-provider: Changes the provider of the current state
+
+Network Setup:
+ ▪ Create a VPC
+ ▪ Create an internet gateway
+ ▪ Create a custom Route Table
+ ▪ Create a Subnet
+ ▪ Associate the Subnet with the Route Table
+
+Security Group Setup:
+ ▪ Create a new security group 
+ ▪ Enable ports 22, 80, 443
+
+Network Interface Setup:
+ ▪ Create a new network interface with IP in the previously created subnet.
+ ▪ Create an elastic IP associated with the network interface.
+
+EC2 Instance Setup:
+ ▪ Create a new ubuntu ec2 instance and attach the network interface to it.
+ ▪ Install httpd server on it.
